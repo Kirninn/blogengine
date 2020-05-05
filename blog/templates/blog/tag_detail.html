@@ -2,8 +2,8 @@
 
 
 {% block content %}
-  <h1 class=mb-3>Post with tag '{{ tags.title|title }}':</h1>
-  {% for post in tags.posts.all %}
+  <h1 class=mb-3>Post with tag '{{ tag.title|title }}':</h1>
+  {% for post in tag.posts.all %}
     {% include 'blog/includes/post_card_templates.html' %}
     {% endfor %}
 
