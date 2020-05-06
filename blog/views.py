@@ -27,6 +27,7 @@ class TagCreate(ObjectCreateMixin, View):
     form_model = TagForm
     template = 'blog/tag_create.html'
 
+
 class PostCreate(ObjectCreateMixin, View):
     form_model = PostForm
     template = 'blog/post_create.html'
@@ -42,3 +43,15 @@ class PostUpdate(ObjectUpdateMixin,View):
     model = Post
     form_model = PostForm
     template = 'blog/post_update_form.html'
+
+
+class TagDelete(ObjectDeleteMixin, View):
+    model = Tag
+    template = 'blog/tag_delete_form.html'
+    redirect_url = 'url_tags_list'
+
+
+class PostDelete(ObjectDeleteMixin, View):
+    model = Post
+    template = 'blog/post_delete_form.html'
+    redirect_url = 'url_blog_list'
